@@ -1,5 +1,6 @@
 import DashboarCard from "@/components/dashboard/DashboarCard";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
+import PostTable from "@/components/posts/PostTable";
 export default function Home() {
   return (
     <>
@@ -24,6 +25,8 @@ export default function Home() {
     icon={<MessageCircle  className="text-slate-500" size={72}/>}/>
   
   </div>
+<PostTable title="this is post" limit={5}/>
+
  
     </>
   );
