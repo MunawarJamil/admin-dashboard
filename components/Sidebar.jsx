@@ -31,7 +31,7 @@ function Sidebar() {
           </CommandItem>
           <CommandItem>
             <Newspaper className="mr-1 h-4 w-4" />
-            <Link href="/post">Posts</Link>
+            <Link href="/posts">Posts</Link>
           </CommandItem>
 
           <CommandItem>

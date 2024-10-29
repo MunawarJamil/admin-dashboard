@@ -19,9 +19,12 @@ import {
 
 function PostTable({limit,title}:PostsTableProps) {
 
-
-  
-  
+//sort post in decsending order based on date 
+  const sortedPosts: Post[] = [...posts].sort((a,b)=>
+  new Date(b.date).getTime() - new Date(a.date).getTime())
+  //filter posts to limit
+  const filteredPosts = limit ? sortedPosts.slice(0,limit):
+  sortedPosts
   
     return (
 <>
@@ -41,7 +44,7 @@ function PostTable({limit,title}:PostsTableProps) {
       </TableRow>
     </TableHeader>
     <TableBody>
-        {posts.map((post)=> (
+        {filteredPosts.map((post)=> (
             <TableRow key={post.id}>
  <TableCell className="font-medium  ">
     {post.title}
