@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./../components/Navbar"; 
 import Sidebar from './../components/Sidebar';
- 
+import { Toaster } from "@/components/ui/toaster"
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -36,12 +36,12 @@ export default function RootLayout({
             <div className="hidden md:block w-[300px] h-[100vh]">
             <Sidebar/>
             </div>
-            <div className="p-5 w-full md:max-w-[1140px]">
+            <div className="p-5 w-full md:max-w-full">
 
             {children}
             </div>
         </div>
-        
+        <Toaster />
       </body>
     </html>
   );

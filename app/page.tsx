@@ -1,7 +1,8 @@
 import DashboarCard from "@/components/dashboard/DashboarCard";
-import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
+import { Folder, ThumbsUp   , MessageCircle, Newspaper, User } from "lucide-react";
 import PostTable from "@/components/posts/PostTable";
-import AnalyticsChart from './../components/dashboard/AnalyticsChart';
+import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
+// import AnalyticsChart from './../components/dashboard/AnalyticsChart';
 export default function Home() {
   return (
     <>
@@ -21,15 +22,25 @@ export default function Home() {
     icon={<User  className="text-slate-500" size={72}/>}/>
   
 
-  <DashboarCard title='Comments'
+  <DashboarCard 
+    title='Comments'
     count={1550}
-    icon={<MessageCircle  className="text-slate-500" size={72}/>}/>
+    icon={<MessageCircle  className="text-slate-500" size={72}/>}
+    />
   
-  </div>
+  <DashboarCard
+    title='Likes'
+    count=  {17699}
+    icon={<ThumbsUp    className="text-slate-500" size={72}/>}/>
+  
 
+  </div>
  
-    <AnalyticsChart/>
- 
+  
+    <AnalyticsChart    />
+    
+    
+     
 <PostTable title="this is post" limit={5}/>
 
  
