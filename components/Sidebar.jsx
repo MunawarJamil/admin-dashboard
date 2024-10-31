@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 function Sidebar() {
   return (
-    <Command className="bg-secondary rounded-none">
+    <Command className="bg-secondary rounded-none ">
       <CommandInput placeholder="Type a command or search..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>

@@ -145,7 +145,7 @@ const handleSubmit = (data: z.infer<typeof formSchema>)=>{
         <Button
         onClick={() => {
           toast({
-            title: "chootiye gand na mrwa",
+            title: "Your post has been updated successfully",
             
           })
         }}

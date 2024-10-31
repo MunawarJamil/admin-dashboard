@@ -41,7 +41,7 @@ export default function Home() {
     
     
      
-<PostTable title="this is post" limit={5}/>
+<PostTable title="Recent Post" limit={5}/>
 
  
     </>

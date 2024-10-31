@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./../components/Navbar"; 
-import Sidebar from './../components/Sidebar';
-import { Toaster } from "@/components/ui/toaster"
+import Navbar from "./../components/Navbar";
+import Sidebar from "./../components/Sidebar";
+import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,18 +31,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
-        <div className="flex ">
-
-            <div className="hidden md:block w-[300px] h-[100vh]">
-            <Sidebar/>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <div className="flex">
+            {/* Fixed sidebar */}
+            <div className="hidden md:block fixed w-[300px] h-full">
+              <Sidebar />
             </div>
-            <div className="p-5 w-full md:max-w-full">
-
-            {children}
+            {/* Scrollable content area */}
+            <div className="p-5 w-full md:max-w-full md:ml-[300px] h-[calc(100vh-64px)] overflow-y-auto">
+              {children}
             </div>
-        </div>
-        <Toaster />
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
